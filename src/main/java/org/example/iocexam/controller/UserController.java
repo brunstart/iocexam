@@ -1,0 +1,33 @@
+package org.example.iocexam.controller;
+
+import org.example.iocexam.domain.User;
+import org.example.iocexam.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class UserController {
+    private UserService userService;
+
+    public UserController() {
+        System.out.println("UserController() 실행");
+    }
+
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+        System.out.println("UserController(UserService) 실행");
+    }
+
+    public void joinUser() {
+        
+        // 실제 서비스가 동작하고 있다면 사용자가 브라우저에 입력한 정보가 들어올것
+        User user = new User();
+        user.setName("yang");
+        user.setPassword("123");
+        user.setEmail("yang@yang.com");
+
+        userService.joinUser(user);
+    }
+}
