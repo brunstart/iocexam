@@ -23,9 +23,10 @@ public class SpringExam04 /*implements CommandLineRunner*/ {
     // }
 
 
-    // 스프링부트가 동작한 후에 실행하고자 하는 코드가 있을 때 (람다식)
+    // 스프링부트가 동작한 후에 실행하고자 하는 코드가 있을 때 CommandLineRunner 사용
+    // @Bean으로 등록해서 IoC 컨테이너가 관리
     @Bean
-    public CommandLineRunner commandLineRunner(Game game) {
+    public CommandLineRunner commandLineRunner(Game game) {     // 람다식으로 run 메소드를 구현
         return args -> {
             game.play();
         };
