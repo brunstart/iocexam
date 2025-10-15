@@ -1,12 +1,14 @@
 package org.example.iocexam.controller;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.example.iocexam.domain.User;
 import org.example.iocexam.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
-@Controller
+// @Controller
 public class UserController {
     private UserService userService;
 
@@ -29,5 +31,15 @@ public class UserController {
         user.setEmail("yang@yang.com");
 
         userService.joinUser(user);
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("UserController 생성 후 할 일 추가");
+    }
+    
+    @PreDestroy
+    public void destroy() {
+        System.out.println("UserController가 소멸되기 전에 할 일 추가");
     }
 }

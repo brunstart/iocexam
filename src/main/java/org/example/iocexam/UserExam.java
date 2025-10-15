@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
+
 public class UserExam {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(UserConfig.class);

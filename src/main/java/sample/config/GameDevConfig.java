@@ -1,10 +1,12 @@
 package sample.config;
 
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Controller;
 import sample.bean.Dice;
 import sample.bean.Game;
 import sample.bean.Player;
@@ -12,9 +14,9 @@ import sample.bean.Player;
 import java.util.List;
 
 @Configuration
-@Profile("prod")
+@Profile("dev")
 @PropertySource({"classpath:game.properties"})
-public class GameConfig {
+public class GameDevConfig {
 
     // @Value("${face}")   // 이렇게 선언도 가능
     // int face;
@@ -31,7 +33,7 @@ public class GameConfig {
         // Player player = new Player(dice);
         Player player = new Player();
         player.setDice(dice);
-        player.setName("Kang");
+        player.setName("강데브");
         return player;
     }
 
@@ -40,7 +42,7 @@ public class GameConfig {
         // Player player = new Player(dice);
         Player player = new Player();
         player.setDice(dice);
-        player.setName("park");
+        player.setName("박코딩");
         return player;
     }
 
@@ -49,7 +51,7 @@ public class GameConfig {
         // Player player = new Player(dice);
         Player player = new Player();
         player.setDice(dice);
-        player.setName("yang");
+        player.setName("양개발");
         return player;
     }
 
@@ -58,7 +60,7 @@ public class GameConfig {
         // Player player = new Player(dice);
         Player player = new Player();
         player.setDice(dice);
-        player.setName("kim");
+        player.setName("김멋사");
         return player;
     }
 

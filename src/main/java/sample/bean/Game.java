@@ -1,7 +1,10 @@
 package sample.bean;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
+// @Component
 public class Game {
     private List<Player> players;
 
